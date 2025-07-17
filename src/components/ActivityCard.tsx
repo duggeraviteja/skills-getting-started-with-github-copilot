@@ -32,21 +32,25 @@ export const ActivityCard: React.FC<ActivityCardProps> = ({
           <strong>Location:</strong> {location}
         </div>
       </div>
-      <div className="participants-section">
-        <h3 style={{ marginTop: '1.5em', color: '#2c3e50' }}>Participants</h3>
-        <ul style={{
-          listStyleType: 'disc',
-          paddingLeft: '1.5em',
-          background: '#f9f9f9',
-          borderRadius: '8px',
-          boxShadow: '0 1px 4px rgba(0,0,0,0.04)',
-          margin: '0.5em 0 1em 0'
-        }}>
+      <div className="participants-section" style={{
+        marginTop: '1.5em',
+        padding: '1em',
+        background: '#f9f9f9',
+        borderRadius: '10px',
+        boxShadow: '0 2px 8px rgba(0,0,0,0.05)'
+      }}>
+        <h3 style={{ color: '#2c3e50', marginBottom: '0.5em' }}>Participants</h3>
+        <ul style={{ paddingLeft: '1.5em', margin: 0 }}>
           {participants.length === 0 ? (
             <li style={{ color: '#888' }}>No participants yet.</li>
           ) : (
             participants.map((name, idx) => (
-              <li key={idx} style={{ padding: '0.25em 0', color: '#34495e' }}>
+              <li key={idx} style={{
+                color: '#34495e',
+                padding: '0.25em 0',
+                fontWeight: 500,
+                borderBottom: idx < participants.length - 1 ? '1px solid #eee' : 'none'
+              }}>
                 {name}
               </li>
             ))
