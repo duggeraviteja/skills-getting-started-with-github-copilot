@@ -44,7 +44,7 @@ export const ActivityCard: React.FC<ActivityCardProps> = ({
           {participants.length === 0 ? (
             <li style={{ color: '#888' }}>No participants yet.</li>
           ) : (
-            participants.map((name, idx) => (
+            participants.map((name: string, idx: number) => (
               <li key={idx} style={{
                 color: '#34495e',
                 padding: '0.25em 0',
